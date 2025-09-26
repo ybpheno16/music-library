@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'music_library',
+      name: 'musicLibrary',
       filename: 'remoteEntry.js',
       exposes: {
         './MusicLibrary': './src/MusicLibrary.jsx',
