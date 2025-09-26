@@ -1,33 +1,16 @@
 {
-  "name": "music-library-microfrontend-demo",
+  "name": "music-library-monorepo",
   "version": "1.0.0",
-  "description": "A comprehensive React application demonstrating micro frontend architecture, authentication, and modern web development practices",
-  "scripts": {
-    "start": "./start-dev.sh",
-    "install-all": "cd music-library && npm install && cd ../main-app && npm install",
-    "dev:music-library": "cd music-library && npm run dev",
-    "dev:main-app": "cd main-app && npm run dev",
-    "build:music-library": "cd music-library && npm run build",
-    "build:main-app": "cd main-app && npm run build",
-    "build:all": "npm run build:music-library && npm run build:main-app",
-    "preview:music-library": "cd music-library && npm run preview",
-    "preview:main-app": "cd main-app && npm run preview"
-  },
-  "keywords": [
-    "react",
-    "microfrontend",
-    "module-federation",
-    "authentication",
-    "jwt",
-    "music-library",
-    "vite",
-    "demo"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {},
+  "private": true,
   "workspaces": [
-    "main-app",
-    "music-library"
-  ]
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w main-app",
+    "build": "npm run build -w music-library && npm run build -w main-app",
+    "preview": "npm run preview -w main-app"
+  },
+  "devDependencies": {
+    "vite": "^7.1.4"
+  }
 }

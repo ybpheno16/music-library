@@ -1,0 +1,28 @@
+{
+  "builds": [
+    {
+      "src": "packages/music-library/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "packages/music-library/dist"
+      }
+    },
+    {
+      "src": "packages/main-app/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "packages/main-app/dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/music-library/(.*)",
+      "destination": "/packages/music-library/dist/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/packages/main-app/dist/index.html"
+    }
+  ]
+}
