@@ -1,7 +1,7 @@
 # Music Library
 
 A modern React application demonstrating micro frontend architecture, authentication, and advanced JavaScript array methods. Built with React 19, Vite, and Module Federation.
-
+ 
 ## Features
 
 ### Core Functionality
